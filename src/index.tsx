@@ -11,7 +11,7 @@ import {
   Stack,
   Text,
   View,
-  VStack
+  VStack,
 } from "native-base";
 import React from "react";
 
@@ -28,9 +28,13 @@ const BaseApp: React.FC = () => {
     setValue("");
   };
   function findConsVogaQTD(text: string) {
-    const qtdVogal = (text.toLocaleLowerCase().match(/[aeiou]/gi) || []).length;
+    const qtdVogal = (
+      text.toLocaleLowerCase().match(/[aáàãâeéêiíoóõôuú]/gi) || []
+    ).length;
     const qtdConsoante = (
-      text.toLocaleLowerCase().match(/[^a^e^i^o^u|^0-9]/gi) || []
+      text
+        .toLocaleLowerCase()
+        .match(/[^a^á^à^ã^â^e^é^ê^i^í^o^ó^õ^ô^u^ú|^0-9]/gi) || []
     ).length;
     return `${qtdVogal}V ${qtdConsoante}C`;
   }
