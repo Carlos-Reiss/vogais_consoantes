@@ -111,7 +111,7 @@ const BaseApp: React.FC = () => {
                 }}
                 key={index}
               >
-                <Text highlight mb="2">{`${index + 1}º `}</Text>
+                <Text highlight mb="2">{`${index + 1} º `}</Text>
                 <Text highlight mb="2">{`${formatedValue(val)} `}</Text>
                 <Text highlight mb="2">{`${findConsVogaQTD(val)}`}</Text>
               </View>
